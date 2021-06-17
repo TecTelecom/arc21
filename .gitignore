@@ -1,3 +1,6 @@
+# Arquivos internos do ERRBOT
+/date
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
