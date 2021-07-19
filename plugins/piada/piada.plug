@@ -1,0 +1,9 @@
+[Core]
+Name = Piada
+Module = piada 
+
+[Documentation]
+Description = Bot de piadas.
+
+[Python]
+Version = 3
