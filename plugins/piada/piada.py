@@ -1,56 +1,58 @@
 from errbot import BotPlugin, botcmd
-from random import randint
+from random import choice
 
-class Piadas(BotPlugin):
+
+class Piada(BotPlugin):
     """
-    Gerar piada de forma aleatória ou por tema
-    De acordo com o comando usado pelo usuário
+    Escolha a forma de gerar uma piada.
     """
+
+    @botcmd
+    def ajuda(self, msg, args):
+        """
+        Abre o menu de ajuda para o usuário.
+        """
+
+        yield "Este bot conta piadas."
+        yield "Pode ser usado da seguinte forma:"
+        yield "1) piada"
+        yield "2) piada <tema>"
+        yield "onde <tema> é um tema de piada a sua escolha!"
+        yield "Para saber os temas disponíveis, digite: tema"
 
     @botcmd(split_args_with=' ')
     def piada(self, msg, args):
-        
+        """
+        Conta uma piada
+        """
+
+        if len(args[0]) > 0: # o usuário definiu um tema em especial
+            pass
+        else:
+            # o usuário não definiu o tema, sortear
+            pass
+
         try:
-            aleatorio = int(args[1])
-            tema = int(args[2])
-            sair = int(args[3])
-
+            aleatorio = int([1])
+            tema = int([2])
+            sair = int([3])
         except:
-
             yield "Olá, vamos começar!"
             yield "Digite [1] para piada aleatória."
             yield "Digite [2] para escolher o tema da piada."
             yield "Digite [3] para sair."
 
-        if aleatorio == 1:
-            foo = ['Piada 1', 'Piada 2', 'Piada 3', 'Piada 4', 'Piada 5']
-            print(random.choice(foo))
-        if tema == 2:
-            print(list['tema1', 'tema2', 'tema3'])
-        if sair == 3:
-            print(fim)
 
-    def fim():       
-        try:
-            raise KeyboardInterrupt
+        # Informar se deseja uma piada aleatória ou por tema.
+        # Forma de usar:
+        # !piada
+        # onde será retornado:
+        # yield "Olá, vamos começar!"
+        # yield "Digite [1] para piada aleatória."
+        # yield "Digite [2] para escolher o tema da piada."
+        # yield "Digite [3] para sair."
 
-        finally:
-            print('Goodbye, world!')
-
-
-
-        """
-        Informar se deseja uma piada aleatória ou por tema.
-        Forma de usar:
-        !piada
-        onde será retornado:
-        yield "Olá, vamos começar!"
-        yield "Digite [1] para piada aleatória."
-        yield "Digite [2] para escolher o tema da piada."
-        yield "Digite [3] para sair."
-
-        Se digitado [1] -> retornar piada aleatória
-        Se digitado [2] -> apresentar uma lista de temas, para o usuário escolher um.
-        Se digitado [3] -> retornar ("TE AGUARDAMOS DE VOLTA!")
-        """
-    
+        # Se digitado [1] -> retornar piada aleatória
+        # Se digitado [2] -> apresentar uma lista de temas, para o usuário escolher um.
+        # Se digitado [3] -> retornar ("TE AGUARDAMOS DE VOLTA!")
+        
