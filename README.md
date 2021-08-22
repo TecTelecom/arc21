@@ -10,3 +10,6 @@
     girar a maçaneta da porta
     avançar até a porta
     ```
+## Implementação
+* Vamos usar o ERRBOT para programar o jogo de labirinto, em python, como um plugin. 
+> Programamos um plugin de teste que tem por objetivo "rolar dados" pensado para jogos em RPG, contudo pode ajudar em outros jogos também. 
